@@ -1,0 +1,24 @@
+{
+  "商品名稱": [
+    { "func": "get", "body": { "path": "name" } }
+  ],
+  "售價（85折）": [
+    { "func": "get",      "body": { "path": "price" } },
+    { "func": "multiply", "body": { "factor": 0.85 } },
+    { "func": "round",    "body": { "decimals": 0 } }
+  ],
+  "顏色1": [
+    { "func": "get", "body": { "path": "skus[0].color" } }
+  ],
+  "尺寸1": [
+    { "func": "get", "body": { "path": "skus[0].size" } }
+  ],
+  "顏色2": [
+    { "func": "get", "body": { "path": "skus[1].color" } },
+    { "func": "default", "body": { "value": "" } }
+  ],
+  "尺寸2": [
+    { "func": "get", "body": { "path": "skus[1].size" } },
+    { "func": "default", "body": { "value": "" } }
+  ]
+}

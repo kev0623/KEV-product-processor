@@ -1,0 +1,16 @@
+{
+  "input_format": "multi_row",
+  "group_by": "商品編號",
+  "fields": {
+    "id":    { "kind": "col", "col": "商品編號" },
+    "name":  { "kind": "col", "col": "商品名稱" },
+    "price": { "kind": "col", "col": "售價" },
+    "skus": {
+      "kind": "aggregate",
+      "fields": {
+        "color": { "col": "顏色" },
+        "size":  { "col": "尺寸" }
+      }
+    }
+  }
+}

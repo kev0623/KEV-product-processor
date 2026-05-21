@@ -1,0 +1,45 @@
+{
+  "_comment": "Levis 品牌腳本 — 定義輸入格式與品牌常數",
+  "input_format": "multi_row",
+  "group_by": "Level1",
+  "fields": {
+    "level1":           { "kind": "col", "col": "Level1" },
+    "partsDescription": { "kind": "col", "col": "PartsDescription" },
+    "priceSale":        { "kind": "col", "col": "PriceSale" },
+    "level3":           { "kind": "col", "col": "Level3" },
+    "level4":           { "kind": "col", "col": "Level4" },
+    "level5":           { "kind": "col", "col": "Level5" },
+    "level6":           { "kind": "col", "col": "Level6" },
+    "level7":           { "kind": "col", "col": "Level7" },
+    "level12":          { "kind": "col", "col": "Level12" },
+    "level15":          { "kind": "col", "col": "Level15" },
+    "descriptionShort": { "kind": "col", "col": "DescriptionShort" },
+    "skus": {
+      "kind": "aggregate",
+      "fields": {
+        "size":    { "col": "Level15" },
+        "partsNo": { "col": "PartsNo" }
+      }
+    }
+  },
+  "constants": {
+    "brand":         "Levis",
+    "brandFull":     "LEVIS",
+    "contactName":   "李傳玲",
+    "subStation":    "sub655",
+    "deliveryType":  "直店配",
+    "safeStock":     "12",
+    "maxQty":        "3",
+    "warrantyType":  "無保固",
+    "dimL":          "45",
+    "dimW":          "30",
+    "dimH":          "200",
+    "isExpiry":      "N",
+    "isBuyout":      "N",
+    "minPackage":    "1",
+    "hasE-waste":    "否",
+    "attrOption":    "一層選項",
+    "sharedImage":   "是",
+    "specDisplay":   "表格式"
+  }
+}

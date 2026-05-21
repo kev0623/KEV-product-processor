@@ -1,0 +1,77 @@
+{
+  "_comment": "Yahoo 平台腳本 — 純平台欄位結構，所有品牌常數從 Order 取值",
+
+  "提案人":       [{ "func": "get", "body": { "path": "contactName" } }],
+  "是否送出提案": [{ "func": "literal", "body": { "value": "否" } }],
+  "提案子站":     [{ "func": "get", "body": { "path": "subStation" } }],
+
+  "賣場名稱": [
+    { "func": "get",     "body": { "path": "partsDescription" } },
+    { "func": "replace", "body": { "from": "®", "to": "" } },
+    { "func": "replace", "body": { "from": "™", "to": "" } }
+  ],
+
+  "特色標題": [{ "func": "literal", "body": { "value": "-" } }],
+
+  "商品特色": [
+    { "func": "get",  "body": { "path": "descriptionShort" } },
+    { "func": "trim" }
+  ],
+
+  "配送方式": [{ "func": "get", "body": { "path": "deliveryType" } }],
+  "賣場級別": [{ "func": "literal", "body": { "value": "無級別" } }],
+
+  "商品詳情": [
+    { "func": "get",    "body": { "path": "level1" } },
+    { "func": "prefix", "body": { "text": "貨號:" } }
+  ],
+
+  "購物中心售價": [{ "func": "get", "body": { "path": "priceSale" } }],
+  "市價":         [{ "func": "get", "body": { "path": "priceSale" } }],
+  "進貨成本": [
+    { "func": "get",      "body": { "path": "priceSale" } },
+    { "func": "multiply", "body": { "factor": 0.874 } },
+    { "func": "floor" }
+  ],
+
+  "安全庫存量":       [{ "func": "get", "body": { "path": "safeStock" } }],
+  "宅配單次限購數量": [{ "func": "get", "body": { "path": "maxQty" } }],
+  "保固期限":         [{ "func": "get", "body": { "path": "warrantyType" } }],
+
+  "品牌":         [{ "func": "get", "body": { "path": "brand" } }],
+  "商品品牌名稱": [{ "func": "get", "body": { "path": "brandFull" } }],
+  "商品型號":     [{ "func": "get", "body": { "path": "level1" } }],
+
+  "廢四機商品": [{ "func": "get", "body": { "path": "hasE-waste" } }],
+  "長度":       [{ "func": "get", "body": { "path": "dimL" } }],
+  "寬度":       [{ "func": "get", "body": { "path": "dimW" } }],
+  "高度":       [{ "func": "get", "body": { "path": "dimH" } }],
+  "即期品":     [{ "func": "get", "body": { "path": "isExpiry" } }],
+  "買斷商品":   [{ "func": "get", "body": { "path": "isBuyout" } }],
+  "最小包裝數": [{ "func": "get", "body": { "path": "minPackage" } }],
+
+  "屬性選項":         [{ "func": "get", "body": { "path": "attrOption" } }],
+  "共用同一組商品圖": [{ "func": "get", "body": { "path": "sharedImage" } }],
+
+  "屬性項目1:第一層名稱":    [{ "func": "get", "body": { "path": "skus[0].size" } }],
+  "屬性項目1:供應商商品料號": [{ "func": "get", "body": { "path": "skus[0].partsNo" } }],
+  "屬性項目1:數量":          [{ "func": "literal", "body": { "value": "0" } }],
+
+  "屬性項目2:第一層名稱":    [{ "func": "get", "body": { "path": "skus[1].size" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目2:供應商商品料號": [{ "func": "get", "body": { "path": "skus[1].partsNo" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目2:數量":          [{ "func": "literal", "body": { "value": "0" } }],
+
+  "屬性項目3:第一層名稱":    [{ "func": "get", "body": { "path": "skus[2].size" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目3:供應商商品料號": [{ "func": "get", "body": { "path": "skus[2].partsNo" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目3:數量":          [{ "func": "literal", "body": { "value": "0" } }],
+
+  "屬性項目4:第一層名稱":    [{ "func": "get", "body": { "path": "skus[3].size" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目4:供應商商品料號": [{ "func": "get", "body": { "path": "skus[3].partsNo" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目4:數量":          [{ "func": "literal", "body": { "value": "0" } }],
+
+  "屬性項目5:第一層名稱":    [{ "func": "get", "body": { "path": "skus[4].size" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目5:供應商商品料號": [{ "func": "get", "body": { "path": "skus[4].partsNo" } }, { "func": "default", "body": { "value": "" } }],
+  "屬性項目5:數量":          [{ "func": "literal", "body": { "value": "0" } }],
+
+  "商品規格:呈現方式": [{ "func": "get", "body": { "path": "specDisplay" } }]
+}
